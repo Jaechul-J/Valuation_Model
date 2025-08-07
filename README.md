@@ -2,13 +2,13 @@
 
 This project builds a data pipeline and valuation model that combines **OpenDART financial statements** and **stock price data** to analyze company fundamentals and estimate intrinsic value.
 
-## 🧠 Objective
+## Objective
 
 To collect, clean, and analyze multi-year financial data from publicly listed Korean companies, and ultimately develop a data-driven **valuation model**.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 Valuation_Model/
 │
@@ -30,26 +30,26 @@ Valuation_Model/
 
 ---
 
-## 🔌 Data Sources
+## Data Sources
 
-- **OpenDART API** - For financial statements (재무제표)
-- (Next steps) **Stock Price API** - NAVER Finance / Alpha Vantage / Yahoo Finance
+- OpenDART API - For financial statements (재무제표)
+- Stock Price API - NAVER Finance / Alpha Vantage / Yahoo Finance
 
 ---
 
-## ✅ Key Features
+## Key Features
 
-- ✅ Automated download of multi-year financials using OpenDART
-- ✅ Parses and standardizes key financial metrics:
+- Automated download of multi-year financials using OpenDART
+- Parses and standardizes key financial metrics:
   - 매출액 (Revenue)
   - 영업이익 (Operating Income)
   - 당기순이익 (Net Profit)
   - 자산총계 / 부채총계 / 자본총계 (Balance Sheet Items)
-- ✅ Merges company-year records into one clean summary file
+- Merges company-year records into one clean summary file
 
 ---
 
-## 🔮 Future Goals
+## Future Goals
 
 - Integrate historical stock prices
 - Calculate key ratios (P/E, P/B, ROE, etc.)
@@ -58,6 +58,6 @@ Valuation_Model/
 
 ---
 
-## 📦 How to Run
+## How to Run
 
 1. Set your OpenDART API Key in `.env`:
