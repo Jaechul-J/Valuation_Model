@@ -36,7 +36,7 @@ def get_corp_codes():
 
     df = pd.DataFrame(data)
     df.to_csv("data/external/corp_codes.csv", index=False, encoding="utf-8-sig")
-    print("✅ corp_codes.csv 저장 완료")
+    print("corp_codes.csv 저장 완료")
 
 
 
@@ -64,7 +64,8 @@ def fetch_financial_statement(corp_code, corp_name, year, report_code="11011"):
 # 여러 회사 반복 저장
 def fetch_and_save_many(years):
     corp_df = pd.read_csv("data/external/corp_codes.csv", dtype=str)
-    corp_df = corp_df[corp_df['stock_code'].notna() & (corp_df['stock_code'] != ' ')] # 필터링: 종목코드가 존재하는 기업만
+    # 필터링: 종목코드가 존재하는 기업만
+    corp_df = corp_df[corp_df['stock_code'].notna() & (corp_df['stock_code'] != ' ')] 
     corp_df = corp_df.drop_duplicates(subset="corp_code")
     print("The length is:" + str(len(corp_df)))
 
@@ -88,7 +89,7 @@ def fetch_and_save_many(years):
                     df.to_csv(filename, index=False, encoding="utf-8-sig")
 
             except Exception as e:
-                print(f"❌ {corp_name} ({corp_code}) {year} 수집 실패: {e}")
+                print(f"{corp_name} ({corp_code}) {year} 수집 실패: {e}")
             time.sleep(0.2)  # API 호출 간격 조정
 
 

@@ -20,6 +20,13 @@ def calculate_and_update_ratios(filepath="data/processed/financial_summary.csv")
     df = df.sort_values(by=["corp_name", "year"])
     df["매출액증가율"] = df.groupby("corp_name")["매출액"].pct_change()
 
+    round_cols = ['ROE', 'ROA', '영업이익률', '부채비율', '자기자본비율', '매출액증가율']
+
+    # Round to 2 decimal places
+    df[round_cols] = df[round_cols].round(2)
+    pd.options.display.float_format = '{:.2f}'.format
+
+
     # 저장 (덮어쓰기)
     df.to_csv(filepath, index=False, encoding="utf-8-sig")
     print(f"✅ 재무비율이 '{filepath}'에 저장되었습니다.")
