@@ -8,28 +8,6 @@ To collect, clean, and analyze multi-year financial data from publicly listed Ko
 
 ---
 
-## Project Structure
-
-Valuation_Model/
-│
-├── data/
-│ ├── external/ # corp_codes.csv, CORPCODE.xml
-│ ├── raw/
-│ │ └── dart/ # Raw financial CSVs per company/year
-│ └── processed/ # Merged & cleaned dataset (financial_summary.csv)
-│
-├── src/
-│ ├── data/
-│ │ ├── fetch_api.py # OpenDART data downloader
-│ │ └── preprocess_financials.py
-│
-├── .env # Contains your DART_API_KEY
-├── requirements.txt
-└── README.md
-
-
----
-
 ## Data Sources
 
 - OpenDART API - For financial statements (재무제표)
